@@ -1,0 +1,511 @@
+push 1
+print-first
+print-last
+push 2
+print-first
+print-last
+push 3
+print-first
+print-last
+push 4
+print-first
+print-last
+push 5
+print-first
+print-last
+push 6
+print-first
+print-last
+push 7
+print-first
+print-last
+push 8
+print-first
+print-last
+push 9
+print-first
+print-last
+push 10
+print-first
+print-last
+push 11
+print-first
+print-last
+push 12
+print-first
+print-last
+push 13
+print-first
+print-last
+push 14
+print-first
+print-last
+push 15
+print-first
+print-last
+push 16
+print-first
+print-last
+push 17
+print-first
+print-last
+push 18
+print-first
+print-last
+push 19
+print-first
+print-last
+push 20
+print-first
+print-last
+push 21
+print-first
+print-last
+push 22
+print-first
+print-last
+push 23
+print-first
+print-last
+push 24
+print-first
+print-last
+push 25
+print-first
+print-last
+push 26
+print-first
+print-last
+push 27
+print-first
+print-last
+push 28
+print-first
+print-last
+push 29
+print-first
+print-last
+push 30
+print-first
+print-last
+push 31
+print-first
+print-last
+push 32
+print-first
+print-last
+push 33
+print-first
+print-last
+push 34
+print-first
+print-last
+push 35
+print-first
+print-last
+push 36
+print-first
+print-last
+push 37
+print-first
+print-last
+push 38
+print-first
+print-last
+push 39
+print-first
+print-last
+push 40
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+push 101
+print-first
+print-last
+push 102
+print-first
+print-last
+push 103
+print-first
+print-last
+push 104
+print-first
+print-last
+push 105
+print-first
+print-last
+push 106
+print-first
+print-last
+push 107
+print-first
+print-last
+push 108
+print-first
+print-last
+push 109
+print-first
+print-last
+push 110
+print-first
+print-last
+push 111
+print-first
+print-last
+push 112
+print-first
+print-last
+push 113
+print-first
+print-last
+push 114
+print-first
+print-last
+push 115
+print-first
+print-last
+push 116
+print-first
+print-last
+push 117
+print-first
+print-last
+push 118
+print-first
+print-last
+push 119
+print-first
+print-last
+push 120
+print-first
+print-last
+push 121
+print-first
+print-last
+push 122
+print-first
+print-last
+push 123
+print-first
+print-last
+push 124
+print-first
+print-last
+push 125
+print-first
+print-last
+push 126
+print-first
+print-last
+push 127
+print-first
+print-last
+push 128
+print-first
+print-last
+push 129
+print-first
+print-last
+push 130
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+eject
+print-first
+print-last
+inject 1001
+print-first
+print-last
+inject 1002
+print-first
+print-last
+inject 1003
+print-first
+print-last
+inject 1004
+print-first
+print-last
+inject 1005
+print-first
+print-last
+inject 1006
+print-first
+print-last
+inject 1007
+print-first
+print-last
+inject 1008
+print-first
+print-last
+inject 1009
+print-first
+print-last
+inject 1010
+print-first
+print-last
+inject 1011
+print-first
+print-last
+inject 1012
+print-first
+print-last
+inject 1013
+print-first
+print-last
+inject 1014
+print-first
+print-last
+inject 1015
+print-first
+print-last
+inject 1016
+print-first
+print-last
+inject 1017
+print-first
+print-last
+inject 1018
+print-first
+print-last
+inject 1019
+print-first
+print-last
+inject 1020
+print-first
+print-last
+pop
+print-first
+print-last
+pop
+print-first
+print-last
+pop
+print-first
+print-last
+pop
+print-first
+print-last
+pop
+print-first
+print-last
+pop
+print-first
+print-last
+pop
+print-first
+print-last
+pop
+print-first
+print-last
+pop
+print-first
+print-last
+pop
+print-first
+print-last
+pop
+print-first
+print-last
+pop
+print-first
+print-last
+pop
+print-first
+print-last
+pop
+print-first
+print-last
+pop
+print-first
+print-last
+pop
+print-first
+print-last
+pop
+print-first
+print-last
+pop
+print-first
+print-last
+pop
+print-first
+print-last
+pop
+print-first
+print-last
+exit
