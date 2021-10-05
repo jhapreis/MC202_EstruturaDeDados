@@ -31,7 +31,13 @@
 			"locale": "c",
 			"memory": "c",
 			"random": "c",
-			"vector": "c"
+			"vector": "c",
+			"darray.h": "c",
+			"__split_buffer": "c",
+			"string": "c",
+			"__tuple": "c",
+			"string_view": "c",
+			"ranges": "c"
 		}
 	}
 }
