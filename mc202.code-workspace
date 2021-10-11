@@ -37,7 +37,8 @@
 			"string": "c",
 			"__tuple": "c",
 			"string_view": "c",
-			"ranges": "c"
+			"ranges": "c",
+			"errno.h": "c"
 		}
 	}
 }
