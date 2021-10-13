@@ -38,7 +38,15 @@
 			"__tuple": "c",
 			"string_view": "c",
 			"ranges": "c",
-			"errno.h": "c"
+			"errno.h": "c",
+			"list": "c",
+			"unordered_map": "c",
+			"initializer_list": "c",
+			"__hash_table": "c",
+			"__tree": "c",
+			"ios": "c",
+			"map": "c",
+			"set": "c"
 		}
 	}
 }
