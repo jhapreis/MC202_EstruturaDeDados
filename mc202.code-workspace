@@ -46,7 +46,9 @@
 			"__tree": "c",
 			"ios": "c",
 			"map": "c",
-			"set": "c"
+			"set": "c",
+			"dupla_encadeada.h": "c",
+			"string.h": "c"
 		}
 	}
 }
