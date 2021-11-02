@@ -55,37 +55,47 @@ int main(){
         }
 
         else if ( strcmp(cmd, "pre-ordem") == 0 ){
-            
+            printf("pre-ordem: ");
+            pre_ordem_tree(root);
+            printf("\n");
         }
 
         else if ( strcmp(cmd, "em-ordem") == 0 ){
-            
+            printf("em-ordem: ");
+            em_ordem_tree(root);
+            printf("\n");
         }
 
         else if ( strcmp(cmd, "pos-ordem") == 0 ){
-            
+            printf("pos-ordem: ");
+            pos_ordem_tree(root);
+            printf("\n");
         }
 
         else if ( strcmp(cmd, "minimo") == 0 ){
-            
+            int min = minimo_tree(root);
+            printf("minimo: %d\n", min);
         }
 
         else if ( strcmp(cmd, "maximo") == 0 ){
-            
+            int max = maximo_tree(root);
+            printf("maximo: %d\n", max);
         }
 
         else if ( strcmp(cmd, "sucessor") == 0 ){
             scanf("%d", &x);
+            sucessor_predecessor(root, x, "sucessor");
             
         }
 
         else if ( strcmp(cmd, "predecessor") == 0 ){
             scanf("%d", &x);
+            sucessor_predecessor(root, x, "predecessor");
             
         }
 
         else if ( strcmp(cmd, "info") == 0 ){
-            
+            info_tree(root, 0);
         }
 
         else if ( strcmp(cmd, "terminar") == 0 ){ // ok

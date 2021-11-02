@@ -128,11 +128,11 @@ int find_and_remove_tree(tree* root, int valor){
                 *root = remove_cell(atual);
             }
             else{ // se não for a raiz, verifique de qual lado está e repasse a posição que ocupará
-                if(anterior->direita == atual){
-                    anterior->direita  = remove_cell(atual);
+                if(atual == anterior->direita){
+                    anterior->direita  = remove_cell(atual); // reconecte a sub-árvore com o anterior pela direita
                 }
                 else{
-                    anterior->esquerda = remove_cell(atual);
+                    anterior->esquerda = remove_cell(atual); // reconecte a sub-árvore com o anterior pela esquerda
                 }
             }
             return 0;
@@ -177,6 +177,175 @@ int find_value(tree* root, int valor){
 
 
 
+int sucessor_predecessor(tree* root, int valor, char* tag){
+    /**
+     * @brief Primeiramente, procura pelo valor passado. Caso encontre, procura um 
+     * sucessor (um filho da direita) ou um predecessor (um filho da esquerda).
+     * Se o descendente não for NULL (e se tiver achado), exibe a informação na tela.
+     */
+
+    if (root == NULL) return -1; // árvore inválida
+
+    struct cell* atual = *root;
+
+    int found = 0;
+
+    while(atual != NULL){ // procure na árvore, a partir da raiz, até encontrar a chave ou até o final
+
+        if(atual->value == valor){ // se encontrar, interrompa a procura
+            found = 1; // especifica que foi encontrado o valor na árvore
+            break;
+        }
+
+        if(valor > atual->value){ // continue procurando
+            atual = atual->direita;
+        }
+        else{
+            atual = atual->esquerda;
+        }
+    }
+
+
+    if ( strcmp(tag, "sucessor") == 0 ){ // se estiver buscando pelo SUCESSOR
+            if (found == 1 && atual->direita != NULL){ // se foi achado && se existe à direita
+                printf("sucessor de %d: %d\n", valor, atual->direita->value);
+                return 1;
+            }
+            else{ // se não foi achado ou se é NULL à direita
+                printf("nao ha sucessor de %d\n", valor);
+            }
+        } 
+    else if ( strcmp(tag, "predecessor") == 0 ){ // se estiver buscando pelo PREDECESSOR
+            if (found == 1 && atual->esquerda != NULL){ // se foi achado && se existe à esquerda
+                printf("predecessor de %d: %d\n", valor, atual->esquerda->value);
+                return 1;
+            }
+            else{ // se não foi achado ou se é NULL à esquerda
+                printf("nao ha predecessor de %d\n", valor);
+            }
+        }
+    else{
+        printf("comando não reconhecido :/\n");
+    }
+
+    return 0;
+}
+
+
+
+int minimo_tree(tree* root){
+
+    if (root == NULL) return -1; // árvore inválida
+
+    struct cell* atual = *root;
+
+    int minimo = atual->value;
+
+    while(atual->esquerda != NULL){ // enquanto houver valores menores (filhos da esquerda)
+        minimo = atual->esquerda->value;
+        atual  = atual->esquerda;
+    }
+
+    return minimo;
+}
+
+
+
+int maximo_tree(tree* root){
+
+    if (root == NULL) return -1; // árvore inválida
+
+    struct cell* atual = *root;
+
+    int maximo = atual->value;
+
+    while(atual->direita != NULL){ // enquanto houver valores menores (filhos da esquerda)
+        maximo = atual->direita->value;
+        atual  = atual->direita;
+    }
+
+    return maximo;
+}
+
+
+
+infos* info_tree(tree* root, int return_info){
+    /**
+     * @brief Utiliza o método do cálculo de alturas (altura_tree) para salvar e imprimir na tela
+     * as informações requisitadas. Devolver as informações é opcional. 
+     */
+
+    infos* info = (infos*) calloc( 1, sizeof(infos) ); // Iniciar valores com zero.
+
+    int altura = altura_tree(root, info);
+
+    if (altura >= 1){ // correção da altura, porque o nível original é zero, não um
+        info->height = altura - 1;
+    }
+    else{ // não é necessário correção
+        info->height = altura;
+    }
+    
+    printf("nos: %d, folhas: %d, altura: %d\n", info->number_cells, info->number_leafs, info->height);
+
+    if(return_info != 1){
+        free(info);
+        info = NULL;
+    }
+    
+    return info;   
+}
+
+
+
+int pre_ordem_tree(tree* root){
+
+    if (root == NULL) return -1;  // árvore inválida
+    if (*root == NULL) return 0; // fim da árvore
+
+    printf("%d ", (*root)->value);
+
+    pre_ordem_tree( &( (*root)->esquerda ) );
+
+    pre_ordem_tree( &( (*root)->direita  ) );
+
+    return 0;
+}
+
+
+
+int em_ordem_tree(tree* root){
+
+    if (root == NULL) return -1;  // árvore inválida
+    if (*root == NULL) return 0; // fim da árvore
+
+    em_ordem_tree( &( (*root)->esquerda ) );
+
+    printf("%d ", (*root)->value);
+        
+    em_ordem_tree( &( (*root)->direita ) );
+
+    return 0;
+}
+
+
+
+int pos_ordem_tree(tree* root){
+
+    if (root == NULL) return -1;  // árvore inválida
+    if (*root == NULL) return 0; // fim da árvore
+
+    pos_ordem_tree( &( (*root)->esquerda ) );
+    
+    pos_ordem_tree( &( (*root)->direita  ) );
+
+    printf("%d ", (*root)->value);
+
+    return 0;
+}
+
+
+
 
 
 
@@ -196,26 +365,46 @@ struct cell* remove_cell(struct cell* atual){
 
     struct cell *cell_1, *cell_2;
 
-    if (atual->esquerda == NULL){ // sem filho à esquerda, apontar para filho da direita (com filho à direita ou NULL)
+    if (atual->esquerda == NULL && atual->direita == NULL){ // remover nó folha
+        cell_2 = NULL;
+        free(atual);
+        return cell_2;
+    }
+    else if(atual->esquerda == NULL){ // sem filho somente à esquerda
         cell_2 = atual->direita;
         free(atual);
         return cell_2;
     }
-
-    cell_1 = atual;               // procura filho mais à direita na sub-árvore da esquerda
-    cell_2 = atual->esquerda;     // (ou seja, o maior filho, que pode assumir o lugar do seu ancestral, sem deixar órfãos -- já que não possui descendentes; é uma folha)
-    while(cell_2->direita != NULL){ // enquanto não chegar num descendente folha
-        cell_1 = cell_2;
-        cell_2 = cell_2->direita;
+    else if(atual->direita == NULL){ // sem filho somente à direita
+        cell_2 = atual->esquerda;
+        free(atual);
+        return cell_2;
     }
+    else{ // nó com dois filhos
 
-    if(cell_1 != atual){          // copia o filho mais à direita na sub-árvore da esquerda para o lugar do nó removido
-        cell_1->direita  = cell_2->esquerda;
-        cell_2->esquerda = atual->esquerda;
-    }
-    cell_2->direita = atual->direita; 
-    free(atual);
-    return cell_2;
+        cell_1 = atual;               
+        cell_2 = atual->direita; // entra na sub-árvore da direita
+        while(cell_2->esquerda != NULL){
+            /**
+             * Enquanto não chegar num nó folha, procurar, na sub-árvore da direita,
+             * o menor valor possível (um descendente para substituir). 
+             */
+            cell_1 = cell_2;
+            cell_2 = cell_2->esquerda;
+        }
+
+        /**
+         * Copia o filho mais à esquerda na sub-árvore da direita
+         * para o lugar do nó a ser removido 
+         */
+        if(cell_1 != atual){
+            cell_1->esquerda  = cell_2->direita;
+            cell_2->direita = atual->direita;
+        }
+        cell_2->esquerda = atual->esquerda; 
+        free(atual);
+        return cell_2;
+    }   
 }
 
 
@@ -233,3 +422,41 @@ void free_cell(struct cell* celula){
     celula = NULL;
 }
 
+
+
+int altura_tree(tree* root, infos* info){
+    /**
+     * @brief Função auxiliar da função info_tree. 
+     * Recursivamente, em cada sub-árvore, tenta encontrar a altura delas, até que chegue em uma folha.
+     * Daí, vai somando uma unidade, de trás pra frente, até chegar de volta com a altura total até a raiz.
+     * Enquanto isso, vai coletando outras duas informações: o número de células e o número de folhas.
+     */
+
+
+    if (root == NULL){ // isso representa um erro, pois a raiz não deve ser nula.
+        return 0;
+    }
+
+
+    if (*root == NULL){ // se isso aconteceu, é porque não existe a célula; chegou ao fim da árvore
+        return 0;
+    }
+    else if ( (*root)->direita == NULL && (*root)->esquerda == NULL ){ // procura por células e folhas (que também são células)
+        info->number_leafs += 1;
+        info->number_cells += 1;
+    }
+    else if( (*root)->direita != NULL || (*root)->esquerda != NULL ){ // procura por céluas que não são folhas
+        info->number_cells += 1;
+    }
+
+
+    int dist_esquerda = altura_tree(   &( (*root)->esquerda ) , info  ); // rode na sub-árvore da esquerda
+    int dist_direita  = altura_tree(   &( (*root)->direita  ) , info  ); // rode na sub-árvore da direita
+
+    if(dist_esquerda > dist_direita){ // a altura é definida como sendo a maior altura, ou da direita ou da esquerda
+        return (dist_esquerda + 1);
+    }
+    else{
+        return(dist_direita + 1);
+    }
+}
