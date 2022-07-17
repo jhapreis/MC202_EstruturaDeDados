@@ -8,6 +8,8 @@
 
 
 
+// --------------------------------------------------
+
 lista* criar_lista(){
 
     lista* nova_lista = (lista*) malloc(sizeof(lista));
@@ -27,6 +29,8 @@ lista* criar_lista(){
 
 
 
+// --------------------------------------------------
+
 void deletar_lista(lista* list){
 
     no* atual = list->root;
@@ -42,6 +46,8 @@ void deletar_lista(lista* list){
 }
 
 
+
+// --------------------------------------------------
 
 int adicionar_elemento_lista(lista* list, int chave){
 
@@ -71,34 +77,7 @@ int adicionar_elemento_lista(lista* list, int chave){
 
 
 
-// array_indexes* criar_array_indexes(int quantidade_de_indexes){
-
-//     array_indexes* arr_indexes = (array_indexes*) malloc(sizeof(array_indexes));
-
-//     int** array = (int**) calloc(quantidade_de_indexes, sizeof(int*));
-
-
-//     arr_indexes->array = array;
-
-//     arr_indexes->quantidade = quantidade_de_indexes;
-
-
-//     return arr_indexes;
-// }
-
-
-
-// void deletar_array_indexes(array_indexes* array){
-
-//     for(int i=0; i<array->quantidade; i++){
-
-//         free(array->array[i]);
-//     }
-
-//     free(array);
-// }
-
-
+// --------------------------------------------------
 
 lista* find_indexes_substring(char* texto, char* padrao){
 
@@ -147,6 +126,8 @@ lista* find_indexes_substring(char* texto, char* padrao){
 
 
 
+// --------------------------------------------------
+
 void print_lista(lista* list){
 
     no* atual = list->root;
@@ -162,17 +143,3 @@ void print_lista(lista* list){
 
     printf("\n");
 }
-
-
-
-// void print_array_indexes(array_indexes* array){
-
-//     printf("\n");
-
-//     for(int i=0; i<array->quantidade; i++){
-
-//         printf("%ls ", array->array[i]);
-//     }
-
-//     printf("\n");
-// }
