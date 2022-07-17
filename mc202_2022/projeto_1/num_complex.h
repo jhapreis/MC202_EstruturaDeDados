@@ -2,8 +2,8 @@
 
 
 
-#ifndef NUMERO_COMPLEXO
-#define NUMERO_COMPLEXO
+#ifndef __NUMERO_COMPLEXO__
+#define __NUMERO_COMPLEXO__
 
 
 
