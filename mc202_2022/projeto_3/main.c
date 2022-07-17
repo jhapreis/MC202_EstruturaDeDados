@@ -50,10 +50,6 @@ int main(){
 
     char padrao[tamanho_padrao];
 
-    // memset(texto, 0, sizeof(texto));
-
-    // memset(texto, 0, sizeof(padrao));
-
     printf("\nQual a string de texto?\n");
 
     scanf("%s", texto);
